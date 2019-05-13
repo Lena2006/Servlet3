@@ -5,10 +5,19 @@
  */
 package com.mycompany.dao;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
  *
  * @author user
  */
-public interface CrudDao {
+public interface CrudDao<T> {
+    Optional<T> find(Integer id);
+    void save(T madel);
+    void  update(T model);
+    void delete(Integer id);
+    
+    List<T> findAll();
     
 }
